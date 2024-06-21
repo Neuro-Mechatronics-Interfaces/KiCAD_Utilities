@@ -5,7 +5,7 @@ clc;
 %% 1. Extract coordinates and plot them for sanity-check.
 FILENAME_DXF = 'human-arm-left_grid-v8.DXF';
 FILENAME_KICAD_PCB = '128ch-hdemg-sleeve.kicad_pcb';
-ELECTRODE_FOOTPRINT_ID = sprintf('\t("CustomComponents:1625-5-57-15_D3.18mm_disk")\r\n');
+ELECTRODE_FOOTPRINT_ID = sprintf('\t(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"');
 
 ELEC_RADIUS = 1.5;
 

@@ -42,7 +42,7 @@ function updateFootprintLocations(filename, x, y, footprintName, options)
     fclose(fid);
 
     % Split the file contents into lines
-    lines = strsplit(fileContents, '\n', 'CollapseDelimiters', false);
+    lines = strsplit(fileContents, '\r\n', 'CollapseDelimiters', false);
 
     % Iterate through the lines and update coordinates
     numFootprints = length(x);
@@ -53,7 +53,7 @@ function updateFootprintLocations(filename, x, y, footprintName, options)
             break;
         end
 
-        if contains(lines{ii}, footprintName)
+        if strcmpi(lines{ii}, footprintName)
             % Look for the (at <x> <y>) line
             for jj = ii+1:length(lines)
                 if contains(lines{jj}, '(at ')
@@ -81,5 +81,5 @@ function updateFootprintLocations(filename, x, y, footprintName, options)
     fwrite(fid, updatedContents);
     fclose(fid);
 
-    fprintf('Updated %d footprints in the file. New file saved as %s.\n', footprintsUpdated, newFilename);
+    fprintf('Updated %d footprints in the file (from %d detected lines). New file saved as %s.\n', footprintsUpdated, length(lines), newFilename);
 end
