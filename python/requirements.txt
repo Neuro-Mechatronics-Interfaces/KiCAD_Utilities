@@ -1,0 +1,4 @@
+ezdxf
+numpy
+pandas
+matplotlib

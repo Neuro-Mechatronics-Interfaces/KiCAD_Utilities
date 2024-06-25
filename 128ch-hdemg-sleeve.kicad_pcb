@@ -262,7 +262,7 @@
 	(net 141 "unconnected-(U130-AUXOUT-PadN16)")
 	(net 142 "Net-(U110-OD)")
 	(net 143 "unconnected-(U130-NC8-PadM5)")
-	(net 144 "Net-(U1003-OD)")
+	(net 144 "Net-(U130-IN2)")
 	(net 145 "unconnected-(U130-NC12-PadM9)")
 	(net 146 "unconnected-(U130-NC6-PadM3)")
 	(net 147 "unconnected-(U130-NC16-PadM13)")
@@ -308,6 +308,16 @@
 	(net 187 "unconnected-(U131-NC6-PadM3)")
 	(net 188 "unconnected-(U132-2Y0-Pad2)")
 	(net 189 "unconnected-(U132-1Y0-Pad12)")
+	(net 190 "unconnected-(H3-Pad1)")
+	(net 191 "unconnected-(H4-Pad1)")
+	(net 192 "unconnected-(H5-Pad1)")
+	(net 193 "unconnected-(H6-Pad1)")
+	(net 194 "unconnected-(H7-Pad1)")
+	(net 195 "unconnected-(H8-Pad1)")
+	(net 196 "unconnected-(H9-Pad1)")
+	(net 197 "unconnected-(H10-Pad1)")
+	(net 198 "unconnected-(H1-Pad1)")
+	(net 199 "unconnected-(H2-Pad1)")
 	(footprint "Resistor_SMD:R_0201_0603Metric"
 		(layer "F.Cu")
 		(uuid "01dcd4a4-2cd1-494c-8774-87012cb814c0")
@@ -519,7 +529,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "02179bb0-3faf-4183-b59b-316704c29bb1")
-		(at 180.95 65.65)
+		(at 182.47 82.21000000000001)
 		(property "Reference" "U95"
 			(at 0 -2.25 0)
 			(unlocked yes)
@@ -612,7 +622,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "0267baa4-6474-4803-89e8-de965a5314f3")
-		(at 153.4 67.7)
+		(at 139.35 101.53)
 		(property "Reference" "U20"
 			(at -0.15 -2.7 0)
 			(unlocked yes)
@@ -705,7 +715,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "04966e94-1123-43c1-9b23-5d9c483f154f")
-		(at 190.35 79.5)
+		(at 193.44 99.98)
 		(property "Reference" "U76"
 			(at 0 -3.05 0)
 			(unlocked yes)
@@ -1009,7 +1019,7 @@
 		(at 154 117.5)
 		(descr "Mounting Hole 2.2mm, no annular, M2")
 		(tags "mounting hole 2.2mm no annular m2")
-		(property "Reference" "H1"
+		(property "Reference" "H13"
 			(at 0 -3.2 0)
 			(layer "F.SilkS")
 			(uuid "62e7e40e-73bf-40a3-8ee8-09d6b6894d7e")
@@ -1115,10 +1125,136 @@
 			(uuid "7981f2bc-6d17-4864-90cd-583f2a27581c")
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "074eebf8-34f2-44f3-8f19-3409ff5d1065")
+		(at 30.1 73.6)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H6"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "9bd347bd-16f8-4647-b5ce-97d9081d3957")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "0417e414-3cec-43e3-aba9-53e1de69d351")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "efe77cbf-5fad-4402-b94b-2419811da8d1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "03cdab62-c231-4891-8fd7-1d5733f35ccb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f2be07ce-a9c1-4d08-b209-3db8a02c0694")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/efa18fe0-c599-43b0-8aab-3b464d3ff04f")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "423b719e-2203-4028-a153-80bde2b06408")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "a191bd62-d6cb-456e-bf71-02873b46b47f")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "4c39bb35-462b-41d3-b1ca-eb7e5e159ba7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 193 "unconnected-(H6-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "9584634d-d854-4e3a-8a70-506cbcf40be1")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 193 "unconnected-(H6-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "96c1665e-fc0c-48dc-9c09-1f8875908a9b")
+		)
+	)
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "07c28c41-3e1f-4690-adf8-2b7b9e06df9d")
-		(at 198 78.35)
+		(at 199.24 98.42)
 		(property "Reference" "U77"
 			(at -0.15 -2.6 0)
 			(unlocked yes)
@@ -1211,7 +1347,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "0a3cd51f-e37d-4422-ac09-38bd8df56100")
-		(at 127.2 51.25)
+		(at 109.75 72.89)
 		(property "Reference" "U34"
 			(at 0 -2.3 0)
 			(unlocked yes)
@@ -1304,7 +1440,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "0a5e937c-c85f-4044-ad62-c30440a1b9a4")
-		(at 139.45 59.3)
+		(at 124.55 87.21000000000001)
 		(property "Reference" "U27"
 			(at 0.05 -2.7 0)
 			(unlocked yes)
@@ -1611,7 +1747,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "0c52cb51-e854-4d19-b25e-4f97b25ce0ab")
-		(at 148.05 67)
+		(at 133.56 99.98)
 		(property "Reference" "U19"
 			(at 0 -3 0)
 			(unlocked yes)
@@ -1704,7 +1840,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "0e1ca721-1473-488a-8d2d-bd20ac9bbe2c")
-		(at 222.45 66.25)
+		(at 219.82999999999998 82.55)
 		(property "Reference" "U91"
 			(at -0.05 -2.3 0)
 			(unlocked yes)
@@ -1797,7 +1933,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "0e44f55f-8022-493b-866a-4e23dc4eddd2")
-		(at 113.5 59.9)
+		(at 87.19 87.55)
 		(property "Reference" "U11"
 			(at 0.1 -2.8 0)
 			(unlocked yes)
@@ -2266,7 +2402,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "10bdbfc3-ebee-4607-83e7-0861cb65b28c")
-		(at 162.75 133.95)
+		(at 163.5 133.0)
 		(property "Reference" "U63"
 			(at -0.05 -2.7 0)
 			(unlocked yes)
@@ -3092,7 +3228,7 @@
 			(size 0.25 0.25)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.5)
-			(net 144 "Net-(U1003-OD)")
+			(net 144 "Net-(U130-IN2)")
 			(pinfunction "IN2")
 			(pintype "input")
 			(uuid "4b323857-ef00-41ae-992f-2a632dbcc29a")
@@ -3544,7 +3680,7 @@
 		(at 172 117.5)
 		(descr "Mounting Hole 2.2mm, no annular, M2")
 		(tags "mounting hole 2.2mm no annular m2")
-		(property "Reference" "H2"
+		(property "Reference" "H14"
 			(at 0 -3.2 0)
 			(layer "F.SilkS")
 			(uuid "ad300083-b95a-4d40-af42-7d7f31ee4e26")
@@ -3653,7 +3789,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "1946345f-5b28-4c31-a5f9-ae817d1d9042")
-		(at 216.4 49.6)
+		(at 214.66 63.23)
 		(property "Reference" "U111"
 			(at -0.15 -2.5 0)
 			(unlocked yes)
@@ -3746,7 +3882,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "1acc714d-e295-4478-b867-144cfd8718fe")
-		(at 225.15 143.6)
+		(at 193.5 148.0)
 		(property "Reference" "U118"
 			(at -0.15 -2.65 0)
 			(unlocked yes)
@@ -3836,10 +3972,136 @@
 			(uuid "bd6bada6-cd9b-4640-97e8-a6dc0cd22579")
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "1b103e3e-3a5d-4e17-922c-6cea7ea3917e")
+		(at 22.15 89.5)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H5"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "74ee012f-3ef4-4ffe-9ec9-e1b17767d387")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "b4bb1ef2-c691-4902-a225-413799330d36")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a27d5cc6-f723-4d2a-97d5-7fa53f494856")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9c9afce4-21fa-4e7c-b93d-96730a1f83c8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8b574204-faa9-4f49-8ab3-03f040d0236c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/618e0a37-078a-42f5-b19b-ebc329396a96")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "d52cb146-5118-4d87-a559-f566661eb236")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "9a3f74c9-e50e-41ee-958b-b44b6cd6d55b")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "32471394-90be-4b7f-9718-74eeb3c3690d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 192 "unconnected-(H5-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "8f494c2d-f5dd-44ea-8d65-84542d4bcb51")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 192 "unconnected-(H5-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "da4d0ae1-84ce-49f1-b6f5-078ffcf0de28")
+		)
+	)
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "1b3ec77b-0b0e-403e-8fe0-52e9fcfb8b89")
-		(at 131.15 51.95)
+		(at 115.55 74.45)
 		(property "Reference" "U35"
 			(at -0.1 -2.45 0)
 			(unlocked yes)
@@ -3932,7 +4194,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "1b5d57d6-5b4c-4a6b-916e-4c447c81e414")
-		(at 139.05 65.4)
+		(at 121.97 96.87)
 		(property "Reference" "U17"
 			(at 0 -2.6 0)
 			(unlocked yes)
@@ -4025,7 +4287,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "1bccb8e4-09b6-4b8b-9705-28effd897d95")
-		(at 139.4 53.85)
+		(at 127.14 77.55)
 		(property "Reference" "U37"
 			(at 0.1 -2.75 0)
 			(unlocked yes)
@@ -4115,10 +4377,184 @@
 			(uuid "3391d25c-29c0-4ad5-95f4-a9b6d397df53")
 		)
 	)
+	(footprint "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(layer "F.Cu")
+		(uuid "1c6136a9-e29b-4cce-99fd-36f50ba1256b")
+		(at 152.5 91)
+		(descr "THT rectangular pad as test Point, square 1.0mm side length, hole diameter 0.5mm")
+		(tags "test point THT pad rectangle square")
+		(property "Reference" "REF.0"
+			(at 0 -1.448 0)
+			(layer "F.SilkS")
+			(uuid "24c7e58a-b16a-431c-b68d-9043c8f818b8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "TESTPOINT_SMALL"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "074cb469-1ed8-4c63-9a17-da81bebc2b62")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5c854dc5-2cf5-4fe6-9feb-5f7e2f422b61")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c2322b32-d1c5-4c74-858d-6adb75b4369a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a9bfe6bd-56a2-4056-a70b-e6fa6bd5d2aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/24962881-2747-4ab3-8c11-048faf7422a7")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files)
+		(fp_line
+			(start -0.7 -0.7)
+			(end 0.7 -0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "65116d29-ede6-4ba5-940f-2fc4df5ed482")
+		)
+		(fp_line
+			(start -0.7 0.7)
+			(end -0.7 -0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "58024028-8431-42d5-9c1c-0f2d3bb6a7a8")
+		)
+		(fp_line
+			(start 0.7 -0.7)
+			(end 0.7 0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "c0038b1d-00c6-478d-91c3-b51f70da845f")
+		)
+		(fp_line
+			(start 0.7 0.7)
+			(end -0.7 0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "d0768024-1700-4535-b769-e3f4b29862eb")
+		)
+		(fp_line
+			(start -1 -1)
+			(end -1 1)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "0b1805e7-8857-49dc-aa54-29a0608b9069")
+		)
+		(fp_line
+			(start -1 -1)
+			(end 1 -1)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "21d226e7-12a1-47fd-b796-209977757ec9")
+		)
+		(fp_line
+			(start 1 1)
+			(end -1 1)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "dd51451e-6365-4a89-8611-8dfb7473a11c")
+		)
+		(fp_line
+			(start 1 1)
+			(end 1 -1)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "d9b1e4b9-8f4b-455f-847d-369e5d454e03")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "a2e51086-8918-4621-96bb-4c9d0c47c81d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0)
+			(size 1 1)
+			(drill 0.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 15 "REF")
+			(pinfunction "1")
+			(pintype "passive")
+			(uuid "00b86cb5-3151-484e-8cb2-d78a297fad79")
+		)
+	)
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "1cda06f8-c7dd-4a4e-bb0f-1e76da789d48")
-		(at 188.3 71.5)
+		(at 190.86 90.32)
 		(property "Reference" "U86"
 			(at 0 -2.3 0)
 			(unlocked yes)
@@ -4211,7 +4647,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "1f30e8a8-f40f-4974-b9ae-15271ef35b29")
-		(at 209.75 68.9)
+		(at 208.24 85.66)
 		(property "Reference" "U89"
 			(at 0 -2.1 0)
 			(unlocked yes)
@@ -4304,7 +4740,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "1f48e594-13c0-46aa-8236-9fd3960f1c3a")
-		(at 111.6 148.1)
+		(at 103.5 148.0)
 		(property "Reference" "U56"
 			(at -0.05 -2.75 0)
 			(unlocked yes)
@@ -4397,7 +4833,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "1fa246e3-e3b0-4918-9b7c-2c35ba51241d")
-		(at 199.6 85.05)
+		(at 201.82999999999998 108.08)
 		(property "Reference" "U67"
 			(at 0 -2.45 0)
 			(unlocked yes)
@@ -4490,7 +4926,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "219c2904-7093-4d91-805d-db393a8c27c4")
-		(at 122.35 62.05)
+		(at 98.78 90.66)
 		(property "Reference" "U13"
 			(at 0.15 -2.85 0)
 			(unlocked yes)
@@ -4583,7 +5019,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "21fb2d50-d789-4924-8b54-75e00aa5be8c")
-		(at 214.7 132.3)
+		(at 208.5 133.0)
 		(property "Reference" "U119"
 			(at -0.05 -2.8 0)
 			(unlocked yes)
@@ -4676,7 +5112,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "26d01d22-61b5-47db-9bd2-784b6d6ef0a2")
-		(at 131 57.65)
+		(at 112.96000000000001 84.11)
 		(property "Reference" "U25"
 			(at -0.1 -2.65 0)
 			(unlocked yes)
@@ -4769,7 +5205,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "279bc8d8-669d-4ebc-90d9-d746b91c6148")
-		(at 111.85 133.75)
+		(at 103.5 133.0)
 		(property "Reference" "U55"
 			(at -0.1 -2.65 0)
 			(unlocked yes)
@@ -4862,7 +5298,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "28e2eee7-0d5a-4082-9bf6-3c3e5dc38464")
-		(at 134.7 64.45)
+		(at 116.17 95.32)
 		(property "Reference" "U16"
 			(at -0.1 -2.7 0)
 			(unlocked yes)
@@ -4955,7 +5391,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "28ecbc2c-b4ef-42df-bc6a-1b7c1489ded6")
-		(at 135.1 52.7)
+		(at 121.35 76.0)
 		(property "Reference" "U36"
 			(at 0 -2.2 0)
 			(unlocked yes)
@@ -5048,7 +5484,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "2915917f-25db-455d-830c-76462a89a525")
-		(at 149.05 50.4)
+		(at 141.32 71.0)
 		(property "Reference" "U49"
 			(at -0.15 -2.3 0)
 			(unlocked yes)
@@ -5141,7 +5577,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "29396e2a-6c25-4f9c-8294-ef70fa01926a")
-		(at 214.2 143.45)
+		(at 208.5 148.0)
 		(property "Reference" "U120"
 			(at -0.25 -2.7 0)
 			(unlocked yes)
@@ -5234,7 +5670,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "2aa24a61-dedc-442e-aa1e-15bd18c1260a")
-		(at 139.4 47.7)
+		(at 129.73 67.89)
 		(property "Reference" "U47"
 			(at 0.05 -2.35 0)
 			(unlocked yes)
@@ -5327,7 +5763,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "2aeb7c8e-5bde-4f45-8538-dba76fa33c8d")
-		(at 150.75 134.3)
+		(at 148.5 133.0)
 		(property "Reference" "U61"
 			(at -0.25 -2.7 0)
 			(unlocked yes)
@@ -5420,7 +5856,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "2f128645-c1fd-436d-9e9e-fc898a50c40a")
-		(at 109.25 69.1)
+		(at 84.6 97.21000000000001)
 		(property "Reference" "U1"
 			(at 0 -2.7 0)
 			(unlocked yes)
@@ -5513,7 +5949,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "2f4b915a-9f8a-4775-9ba3-f2f022c54c55")
-		(at 209.7 61.05)
+		(at 211.45 74.45)
 		(property "Reference" "U100"
 			(at -0.05 -2.35 0)
 			(unlocked yes)
@@ -5606,7 +6042,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "31e3bbdc-b218-46ac-9da0-60e5c312e79b")
-		(at 232.05 78.75)
+		(at 230.81 100.32)
 		(property "Reference" "U72"
 			(at 0.05 -2.75 0)
 			(unlocked yes)
@@ -5699,7 +6135,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "349812b6-f7b2-4de5-935b-21ede8ec6c31")
-		(at 175.75 143.2)
+		(at 253.5 148.0)
 		(property "Reference" "U126"
 			(at -0.05 -2.85 0)
 			(unlocked yes)
@@ -5789,10 +6225,136 @@
 			(uuid "c4cf3f5d-e257-46a8-8e85-ebb856206376")
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "36034965-5bf9-42e2-9778-6a2ca1e34088")
+		(at 30.1 89.5)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H8"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "4113c246-ce0c-4eb8-8a74-cc4858c4150d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "601140a5-bec4-442b-a378-cbe42b89ecc4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d920a4ca-1d5e-493a-b4c8-9da21a6fcd16")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d2064ad-2c6f-4760-b15c-9ed461bd8e11")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "09be1f32-bd29-4846-b524-f5e0325eab91")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/64713462-647f-4d12-8b56-663e98e73a73")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "24ac28ca-eba3-48aa-8ecf-87285b427bd6")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "6826cc31-e2d8-4947-adf1-dc58d9033ad6")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "ec944db2-d438-48fb-8a89-6a6cce23bda7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 195 "unconnected-(H8-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "704bed67-dc3b-4836-bd45-58f7a8511c65")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 195 "unconnected-(H8-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "511dc9b2-bdd7-4550-b400-755918749622")
+		)
+	)
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "376052c4-07d9-4d4e-89ee-6ca5c5d99036")
-		(at 134.25 71.6)
+		(at 113.58 104.98)
 		(property "Reference" "U6"
 			(at 0.05 -2.75 0)
 			(unlocked yes)
@@ -5885,7 +6447,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "37642d24-34c3-479a-909e-5485bb7b38dd")
-		(at 135.45 46.85)
+		(at 123.93 66.34)
 		(property "Reference" "U46"
 			(at 0 -2.45 0)
 			(unlocked yes)
@@ -5978,7 +6540,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "37d865f2-0009-4d5a-b2c0-ac68f29ee0ab")
-		(at 206.55 83.85)
+		(at 207.62 106.53)
 		(property "Reference" "U68"
 			(at -0.1 -2.35 0)
 			(unlocked yes)
@@ -6071,7 +6633,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "37e61986-32f4-4db5-a602-2edc81d327d1")
-		(at 126.65 62.65)
+		(at 104.58 92.21000000000001)
 		(property "Reference" "U14"
 			(at 0 -2.95 0)
 			(unlocked yes)
@@ -6164,7 +6726,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "39fb6d5c-d940-4b5e-a989-5b746476b13c")
-		(at 148.55 61.15)
+		(at 136.14 90.32)
 		(property "Reference" "U29"
 			(at 0 -2.25 0)
 			(unlocked yes)
@@ -6254,10 +6816,136 @@
 			(uuid "3d8c2fa5-2899-4591-abfc-f36ec9e85a9b")
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "3b54197c-3a88-4050-a1d6-6e1ad4d6a53e")
+		(at 38.05 73.6)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H9"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "4de17f1f-92bc-4db3-ac23-e133b18085d5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "33bd6e5b-cbad-4b8d-ae27-0ac653299fb3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c941822f-fcaa-43c3-9096-521137fbac33")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fc0ec253-05b2-4b09-b4fe-4b585ebf4f05")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4d75a815-abe0-4f00-8607-ae12342d4397")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/13080804-23e1-4c9d-8bcd-4372ca66257c")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "6e49a5da-e7ba-49fc-84bf-35347b87ebb8")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "3202fe5f-a08f-4a85-9c7b-e17b2e9b09ab")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "54e04ac4-1b70-4e9f-9ee0-a93100f56d82")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 196 "unconnected-(H9-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "2a12f8c0-1a80-42f3-8b04-458f8735cd3c")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 196 "unconnected-(H9-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "aaaf7854-1127-482e-8e8b-c47ba85786ce")
+		)
+	)
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "41eca3a9-9573-4be9-9ed8-703a9611b638")
-		(at 124.25 70.6)
+		(at 101.99000000000001 101.87)
 		(property "Reference" "U4"
 			(at 0.05 -2.6 0)
 			(unlocked yes)
@@ -6350,7 +7038,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "4285629a-55e7-4cce-bed6-f9195fa150a0")
-		(at 114.25 69.6)
+		(at 90.4 98.77)
 		(property "Reference" "U2"
 			(at 0.15 -2.95 0)
 			(unlocked yes)
@@ -6651,7 +7339,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "440ff4e7-025f-4a51-be95-4872ed0fba07")
-		(at 182.3 72.5)
+		(at 185.06 91.87)
 		(property "Reference" "U85"
 			(at 0 -2.35 0)
 			(unlocked yes)
@@ -6744,7 +7432,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "47407187-907d-44b4-bb9d-463bc8c7a8f2")
-		(at 144.25 72.6)
+		(at 125.17 108.08)
 		(property "Reference" "U8"
 			(at 0.05 -2.7 0)
 			(unlocked yes)
@@ -6837,7 +7525,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "4907b5bc-ef92-47dd-8100-e199e1b72428")
-		(at 139.25 72.1)
+		(at 119.38 106.53)
 		(property "Reference" "U7"
 			(at 0.1 -2.75 0)
 			(unlocked yes)
@@ -6930,7 +7618,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "4c865479-cac2-4e0f-92f1-2d13d5720bcd")
-		(at 126.95 56.65)
+		(at 107.17 82.55)
 		(property "Reference" "U24"
 			(at -0.2 -2.45 0)
 			(unlocked yes)
@@ -7023,7 +7711,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "4ffa347d-a859-4d76-b848-85f7c303cefb")
-		(at 239.05 77.5)
+		(at 236.6 98.77)
 		(property "Reference" "U73"
 			(at 0.05 -3.05 0)
 			(unlocked yes)
@@ -7116,7 +7804,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "5097f8f2-1371-4bf7-b273-aa25147e9dc5")
-		(at 210.35 51.45)
+		(at 208.86 64.78999999999999)
 		(property "Reference" "U110"
 			(at -0.15 -2.55 0)
 			(unlocked yes)
@@ -7209,7 +7897,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "52ba5070-28ef-4c60-bf7a-8209984b3238")
-		(at 245.25 76.8)
+		(at 242.4 97.21000000000001)
 		(property "Reference" "U74"
 			(at 0.05 -2.7 0)
 			(unlocked yes)
@@ -7476,7 +8164,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "549a14df-d873-462c-a04b-16d164f049db")
-		(at 199.35 53.45)
+		(at 197.27 67.89)
 		(property "Reference" "U108"
 			(at -0.05 -2.85 0)
 			(unlocked yes)
@@ -7569,7 +8257,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "5512723b-11b8-4f85-9aae-b742f23404fa")
-		(at 223.65 73.5)
+		(at 222.42000000000002 92.21000000000001)
 		(property "Reference" "U81"
 			(at -0.2 -2.4 0)
 			(unlocked yes)
@@ -7662,7 +8350,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "5578d811-a56c-46c1-b7b4-94dd79d652a4")
-		(at 143.65 60.3)
+		(at 130.35 88.76)
 		(property "Reference" "U28"
 			(at -0.05 -2.2 0)
 			(unlocked yes)
@@ -7755,7 +8443,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "57772807-f478-4966-a24a-aa49f78c4ad4")
-		(at 201.15 144.1)
+		(at 223.5 148.0)
 		(property "Reference" "U122"
 			(at -0.15 -2.75 0)
 			(unlocked yes)
@@ -7848,7 +8536,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "5aa728ff-1eb2-4dd5-b2cb-7aefe49e2fb2")
-		(at 166 83.5)
+		(at 141.94 91.87)
 		(property "Reference" "U30"
 			(at -0.2 -2.2 0)
 			(unlocked yes)
@@ -7941,7 +8629,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "5aff8477-e664-445e-ba10-29f391a00bfc")
-		(at 227.95 65.25)
+		(at 225.63 81.0)
 		(property "Reference" "U92"
 			(at 0.05 -2.25 0)
 			(unlocked yes)
@@ -8034,7 +8722,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "5bd07412-a34b-4ec5-a61f-2120acc7a8ef")
-		(at 118.95 54.85)
+		(at 95.58 79.45)
 		(property "Reference" "U22"
 			(at -0.1 -2.9 0)
 			(unlocked yes)
@@ -9571,7 +10259,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "6857fdab-ee52-42c4-979e-b0583472a836")
-		(at 139.25 147.65)
+		(at 133.5 148.0)
 		(property "Reference" "U60"
 			(at -0.1 -2.9 0)
 			(unlocked yes)
@@ -9664,7 +10352,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "68687f0e-2099-4b77-8b53-12f204d3f28c")
-		(at 123.55 50)
+		(at 103.96000000000001 71.34)
 		(property "Reference" "U33"
 			(at 0 -2.3 0)
 			(unlocked yes)
@@ -9757,7 +10445,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "696954ed-43c5-471e-aaf6-9568e3baac8b")
-		(at 186.45 64.65)
+		(at 188.27 80.66)
 		(property "Reference" "U96"
 			(at -0.05 -2.3 0)
 			(unlocked yes)
@@ -9850,7 +10538,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "69f4e247-b157-49d0-b1a7-9dd60156eb58")
-		(at 229.95 71.95)
+		(at 228.22 90.66)
 		(property "Reference" "U82"
 			(at -0.15 -2.5 0)
 			(unlocked yes)
@@ -9943,7 +10631,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "6b8fc3df-119c-474d-a795-5997261e4d0b")
-		(at 115.35 41.4)
+		(at 94.96 58.58)
 		(property "Reference" "U41"
 			(at 0 -2.2 0)
 			(unlocked yes)
@@ -10036,7 +10724,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "6cd9619c-512c-47e3-b052-1ab41481b49d")
-		(at 115.05 47.1)
+		(at 92.37 68.22999999999999)
 		(property "Reference" "U31"
 			(at -0.1 -2.25 0)
 			(unlocked yes)
@@ -10126,10 +10814,136 @@
 			(uuid "44738a22-16fc-4f60-994d-a4af391b6b82")
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "6d1c207f-21c7-4e8b-90b5-89517f24143c")
+		(at 46 81.55)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H1"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "4c136250-9533-4a0b-88c4-67858550a23d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "c22ae14a-ef2d-495b-b080-25439d16f578")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6e91f842-0852-4599-b132-f25944100719")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b8e042c8-81cc-4ab3-83fa-8568c8c255fe")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08a776d3-f221-491a-8aff-e2512ebbcc1c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/7c145bc3-a4ad-4c5c-9e66-8d742a59db38")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "76c8b71b-d23b-4b38-9998-4168e800ebff")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "a0a62d11-058e-42e4-9a68-1a94e978677c")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "60b9e52e-13fd-4e99-a5a0-c8b4240a4cc2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 198 "unconnected-(H1-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "f61bfbd0-d23f-4e8a-91d1-0d8aab13f409")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 198 "unconnected-(H1-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "cf5c09a5-fd3b-4a80-990b-230b5cb2c744")
+		)
+	)
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "6d5770b1-c378-4cf5-8b43-1dbd7bb12d77")
-		(at 216.9 74.6)
+		(at 216.63 93.76)
 		(property "Reference" "U80"
 			(at -0.15 -2.6 0)
 			(unlocked yes)
@@ -10222,7 +11036,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "6d5da977-81cd-40a5-a547-a5ad1f5fc710")
-		(at 215.25 67.9)
+		(at 214.04 84.11)
 		(property "Reference" "U90"
 			(at -0.19 -2.25 0)
 			(unlocked yes)
@@ -10607,7 +11421,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "6df05fc8-7d15-4919-a0b7-49abb666d5d6")
-		(at 236.7 132.75)
+		(at 178.5 133.0)
 		(property "Reference" "U115"
 			(at 0.2 -2.55 0)
 			(unlocked yes)
@@ -10697,10 +11511,136 @@
 			(uuid "9c6cecc8-88a3-4a1f-b1ce-0a027e4ba5cc")
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "6e77d9fc-e470-476e-aad6-213259a48422")
+		(at 46 89.5)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H2"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "fa42f271-2498-4745-aacd-adae0207b6bc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "2b734a06-c83a-48e1-9dfb-9dc111ffbd1a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0154b1d2-89d5-48a0-a63f-0e1ce62b1170")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5b37f9ee-3502-49d0-9dc0-5a6e173bed4b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a5232b80-1d70-4044-b60c-775a9bc0ca14")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/4298ca32-29ed-4c79-9fb5-77a564d38d6f")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "44dc5a69-6937-423f-9d8d-b17588781e5a")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "24a46adf-e347-4694-b4fc-86ea65fa24af")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "e8b87c95-06ae-4a05-9eb1-e47c782e0b82")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 199 "unconnected-(H2-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "a172537b-7fdc-4e59-bcf2-038138095d9e")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 199 "unconnected-(H2-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "3559c96b-9206-4f92-9539-703c18573b9f")
+		)
+	)
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "700ccc26-029b-4aa4-b06b-648e5661026b")
-		(at 222.4 48.6)
+		(at 220.45 61.68)
 		(property "Reference" "U112"
 			(at -0.19 -2.5 0)
 			(unlocked yes)
@@ -10793,7 +11733,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "709802b3-e165-40cd-988c-84d92aed5616")
-		(at 148.75 55.65)
+		(at 138.73 80.66)
 		(property "Reference" "U39"
 			(at 0.05 -2.5 0)
 			(unlocked yes)
@@ -10886,7 +11826,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "7101e783-2d9c-4095-b067-09149e1a1155")
-		(at 149.25 73.1)
+		(at 130.97 109.64)
 		(property "Reference" "U9"
 			(at 0 -2.7 0)
 			(unlocked yes)
@@ -10979,7 +11919,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "730b53ad-4f59-4f63-95c0-0ce4de8f90f7")
-		(at 143.95 49)
+		(at 135.53 69.45)
 		(property "Reference" "U48"
 			(at 0 -2.45 0)
 			(unlocked yes)
@@ -11072,7 +12012,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "7442c6fe-67f0-44e7-b0fd-830f37f58d43")
-		(at 232.9 47.6)
+		(at 232.04000000000002 58.58)
 		(property "Reference" "U114"
 			(at -0.05 -2.9 0)
 			(unlocked yes)
@@ -11165,7 +12105,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "745992b8-ef8e-4fe2-a3c7-dcf5c9127baa")
-		(at 193.85 54.45)
+		(at 191.47 69.45)
 		(property "Reference" "U107"
 			(at -0.1 -2.85 0)
 			(unlocked yes)
@@ -11258,7 +12198,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "755a5631-6c24-44c4-9242-5fb2dd8ab9b5")
-		(at 150.9 145.85)
+		(at 148.5 148.0)
 		(property "Reference" "U62"
 			(at -0.2 -2.55 0)
 			(unlocked yes)
@@ -11351,7 +12291,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "757c8e74-f3b7-4d36-99ed-99b446ca604b")
-		(at 184.7 56.8)
+		(at 185.68 71.0)
 		(property "Reference" "U106"
 			(at -0.1 -2.6 0)
 			(unlocked yes)
@@ -11444,7 +12384,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "764f7a63-4316-479f-aca7-a08b076c92d8")
-		(at 185.5 87.15)
+		(at 190.24 111.19)
 		(property "Reference" "U65"
 			(at -0.05 -2.45 0)
 			(unlocked yes)
@@ -11537,7 +12477,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "7a49831c-0e99-478d-8596-992d46b97f43")
-		(at 242.95 69.4)
+		(at 239.81 87.55)
 		(property "Reference" "U84"
 			(at -0.1 -2.35 0)
 			(unlocked yes)
@@ -11630,7 +12570,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "7cd5109e-a936-4d76-a9cd-9acc71874778")
-		(at 230.2 56.7)
+		(at 228.84 69.78999999999999)
 		(property "Reference" "U103"
 			(at -0.19 -2.45 0)
 			(unlocked yes)
@@ -11723,7 +12663,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "7d3ff3e6-026f-4e4c-97ff-0bfc29017d5f")
-		(at 187.7 143.85)
+		(at 238.5 148.0)
 		(property "Reference" "U124"
 			(at 0.15 -2.65 0)
 			(unlocked yes)
@@ -11816,7 +12756,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "83d962ca-3edb-44b3-9760-d202f29e2adc")
-		(at 236.15 70.5)
+		(at 234.01 89.11)
 		(property "Reference" "U83"
 			(at -0.15 -2.4 0)
 			(unlocked yes)
@@ -11909,7 +12849,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "84a57d25-27cd-4c19-9867-6f7859b85bef")
-		(at 205.3 77.25)
+		(at 205.03 96.87)
 		(property "Reference" "U78"
 			(at -0.05 -2.6 0)
 			(unlocked yes)
@@ -12002,7 +12942,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "852b1a99-ca86-409c-9ddc-2fb1914c5962")
-		(at 183.5 80.2)
+		(at 187.65 101.53)
 		(property "Reference" "U75"
 			(at -0.05 -2.75 0)
 			(unlocked yes)
@@ -12095,7 +13035,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "85bd7447-c28f-4e9a-a66c-f914ae3953e1")
-		(at 213.3 82.85)
+		(at 213.42000000000002 104.98)
 		(property "Reference" "U69"
 			(at -0.05 -2.45 0)
 			(unlocked yes)
@@ -12188,7 +13128,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "87e07a5b-6ad5-415f-a39d-31257ac005fe")
-		(at 118.35 61.45)
+		(at 92.99 89.11)
 		(property "Reference" "U12"
 			(at 0.15 -2.55 0)
 			(unlocked yes)
@@ -12489,7 +13429,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "8b01f3b1-0918-4679-a525-94f17437f2b2")
-		(at 216.25 59.15)
+		(at 217.25 72.89)
 		(property "Reference" "U101"
 			(at -0.25 -2.3 0)
 			(unlocked yes)
@@ -12582,7 +13522,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "8b28a200-2e1f-4e3a-932c-fd68708ab784")
-		(at 123.6 43.65)
+		(at 106.55 61.68)
 		(property "Reference" "U43"
 			(at 0 -2.25 0)
 			(unlocked yes)
@@ -12675,7 +13615,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "8b9fdfca-ad1f-4563-a0f1-ba0687e79df1")
-		(at 127.5 44.8)
+		(at 112.34 63.23)
 		(property "Reference" "U44"
 			(at -0.1 -2.3 0)
 			(unlocked yes)
@@ -12768,7 +13708,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "8c0d83ce-cb56-4f28-b0aa-d84aadd1b1e2")
-		(at 143.65 54.65)
+		(at 132.94 79.11)
 		(property "Reference" "U38"
 			(at 0.1 -2.35 0)
 			(unlocked yes)
@@ -12861,7 +13801,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "8c64b20a-d257-40a8-8dab-a479612bf02f")
-		(at 97.25 148.1)
+		(at 88.5 148.0)
 		(property "Reference" "U54"
 			(at 0 -2.7 0)
 			(unlocked yes)
@@ -12954,7 +13894,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "8c916b46-3903-4b82-993c-633c4efc71fb")
-		(at 179.05 57.85)
+		(at 179.88 72.55)
 		(property "Reference" "U105"
 			(at 0.3 -2.7 0)
 			(unlocked yes)
@@ -13047,7 +13987,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "8fdd9d10-3f2e-421c-87f9-adefd56993e8")
-		(at 162.95 146.2)
+		(at 163.5 148.0)
 		(property "Reference" "U64"
 			(at -0.05 -2.35 0)
 			(unlocked yes)
@@ -13314,7 +14254,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "93b3267f-b5fd-400a-a9c7-8a2a4d768668")
-		(at 204.2 61.55)
+		(at 205.65 76.0)
 		(property "Reference" "U99"
 			(at -0.05 -2.25 0)
 			(unlocked yes)
@@ -13407,7 +14347,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "96ccb062-6f4a-46f1-a0ec-89f61b9ffcef")
-		(at 234.05 63.85)
+		(at 231.42000000000002 79.45)
 		(property "Reference" "U93"
 			(at -0.15 -2.45 0)
 			(unlocked yes)
@@ -13500,7 +14440,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "97408a6c-d327-44a2-b045-45f93a833f8c")
-		(at 192.7 63.05)
+		(at 194.06 79.11)
 		(property "Reference" "U97"
 			(at 0.1 -2.45 0)
 			(unlocked yes)
@@ -13593,7 +14533,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "9aa4bd89-5228-4554-b711-10b3b8a92075")
-		(at 239.55 62.85)
+		(at 237.22 77.89)
 		(property "Reference" "U94"
 			(at 0.05 -2.3 0)
 			(unlocked yes)
@@ -14099,10 +15039,136 @@
 			)
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "9d3e36aa-23bb-4214-9c5a-cd0220140978")
+		(at 38.05 81.55)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H10"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "b8802757-7c56-4bdd-8b86-01ab043abd3d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "1a9bea61-3fe7-4ae7-961b-bbd26ff7ecb3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d0455b40-8cdc-45af-83f0-e291dccafd04")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "42f4ce81-384c-40a2-ad87-049c1a0f8ffe")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0618ab5f-9815-4775-983e-2ee37e797fa7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/b79d2fa2-83c0-48d2-a7f4-c654b1b7040c")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "18882137-f3b9-4052-af37-a04f696aad94")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "c3f1add0-3d70-475a-8684-4234632093ce")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "8d896948-e7a0-459d-a839-6ffe77eef738")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 197 "unconnected-(H10-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "84855224-8f07-4f71-9e28-37c1855cf176")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 197 "unconnected-(H10-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "65377325-a1ef-4891-a5e3-2c61c9fff2ae")
+		)
+	)
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "a0518f9e-c268-4ab7-b2da-cb53c0e39860")
-		(at 125.75 133.45)
+		(at 118.5 133.0)
 		(property "Reference" "U57"
 			(at 0.1 -3 0)
 			(unlocked yes)
@@ -14195,7 +15261,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "a127e52f-d120-4a99-a629-2dd80861e9df")
-		(at 126 148.1)
+		(at 118.5 148.0)
 		(property "Reference" "U58"
 			(at -0.19 -5.22 0)
 			(unlocked yes)
@@ -14288,7 +15354,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "a6b34e1c-0ca9-443e-8bda-e62569f70ad2")
-		(at 225 132.9)
+		(at 193.5 133.0)
 		(property "Reference" "U117"
 			(at -0.1 -2.8 0)
 			(unlocked yes)
@@ -14381,7 +15447,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "a7707829-b692-4b11-b2dc-943d8738cce2")
-		(at 135 58.15)
+		(at 118.75999999999999 85.66)
 		(property "Reference" "U26"
 			(at -0.15 -2.65 0)
 			(unlocked yes)
@@ -14474,7 +15540,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "a7bbfcef-9bda-46ed-9d96-d10b0efd4c75")
-		(at 204.25 69.9)
+		(at 202.45 87.21000000000001)
 		(property "Reference" "U88"
 			(at -0.05 -2.35 0)
 			(unlocked yes)
@@ -14567,7 +15633,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "aadb54de-f1bb-4536-af31-b0c084d8a192")
-		(at 119.15 42.4)
+		(at 100.75 60.13)
 		(property "Reference" "U42"
 			(at -0.1 -2.4 0)
 			(unlocked yes)
@@ -14660,7 +15726,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "b00808d4-85ce-4b89-9ffd-4984d3eadfae")
-		(at 204.85 52.45)
+		(at 203.07 66.34)
 		(property "Reference" "U109"
 			(at 0.05 -2.35 0)
 			(unlocked yes)
@@ -14748,6 +15814,258 @@
 			(pinfunction "OD")
 			(pintype "bidirectional")
 			(uuid "efc9f709-4b73-40fb-98df-ea7a24d04f59")
+		)
+	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "b1914548-ab3a-4d8a-a07f-8eb897e4e1e7")
+		(at 22.15 73.6)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H3"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "504d8aff-50b1-4e10-83b1-1a5a5b2a70eb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "b245d868-f0d0-49a9-be22-673201881537")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e4e578a2-0a49-479d-8fb0-4062c9ee7041")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "30626dec-864f-44e9-919e-ded25a6d6d78")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cfcd03b0-9f1d-4a44-9ffa-bbca78e02cf0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/ba424b57-6427-47bc-8e38-07468c9b2184")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "1b9e5a3f-18f6-45e1-9fbe-d1e494afa3c1")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "acbe2010-c791-4a77-af0e-866759ed6839")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "22c78f72-7013-4db8-85ff-f1fc67d05d12")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 190 "unconnected-(H3-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "265edb16-44fe-4f11-8d2d-9b46e7cbd838")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 190 "unconnected-(H3-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "8239f9f6-db78-4156-826e-6bb01dea0edb")
+		)
+	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "b3e140f3-b1d8-413d-9157-53976cf15156")
+		(at 30.1 81.55)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H7"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "d87c5bbb-6087-4192-82c4-9470db7b9c9d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "ca40727d-ca88-4aba-8bad-355acfea9c53")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "67694bcd-b78f-4f89-9a73-5e6750af4240")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a9ae07d-de7f-4b6e-95ab-47c757c32947")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f6a9faa7-096e-443f-897a-21330b1d7908")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/10ca2c0e-0a76-4cc1-b51b-f52e3d19f739")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "a0b2b6ae-4233-4352-a514-10ab9aa0c9c2")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "0eea07fe-3c13-4347-b294-bb9e16ca61da")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "934dd85f-fb70-40da-bcff-1cdb30148c39")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 194 "unconnected-(H7-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "ac5c75e6-cc18-4852-baae-0b9be898699a")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 194 "unconnected-(H7-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "6dc12364-49eb-4ef0-8cec-48de91a2cf36")
 		)
 	)
 	(footprint "Resistor_SMD:R_0201_0603Metric"
@@ -14961,7 +16279,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "b7074238-2bf5-47f4-8e8f-ce297b667a72")
-		(at 225.35 80.3)
+		(at 225.01 101.87)
 		(property "Reference" "U71"
 			(at -0.1 -3.2 0)
 			(unlocked yes)
@@ -15054,7 +16372,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "b939396f-638e-4db6-8ff0-dd7253bfb3d9")
-		(at 131.5 45.8)
+		(at 118.14 64.78999999999999)
 		(property "Reference" "U45"
 			(at -0.15 -2.35 0)
 			(unlocked yes)
@@ -15147,7 +16465,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "bf492861-5eec-4435-a7c8-f3e9c8de7bff")
-		(at 201.65 131.9)
+		(at 223.5 133.0)
 		(property "Reference" "U121"
 			(at -0.25 -2.85 0)
 			(unlocked yes)
@@ -15240,7 +16558,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "bf54c6e1-e11b-40cf-b864-86af68ed4466")
-		(at 139.4 133.95)
+		(at 133.5 133.0)
 		(property "Reference" "U59"
 			(at 0.05 -2.75 0)
 			(unlocked yes)
@@ -15333,7 +16651,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "c4a50d65-f4cd-479b-bfe2-7b087796067f")
-		(at 198.7 62.55)
+		(at 199.86 77.55)
 		(property "Reference" "U98"
 			(at -0.05 -2.35 0)
 			(unlocked yes)
@@ -15426,7 +16744,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "c54c215c-78b4-4b93-b97a-0d164c674c66")
-		(at 158.5 73.5)
+		(at 147.12 72.55)
 		(property "Reference" "U50"
 			(at -0.2 -2.45 0)
 			(unlocked yes)
@@ -15519,7 +16837,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "c6686aff-9656-4035-93db-40a636fb459d")
-		(at 114.05 53.1)
+		(at 89.78 77.89)
 		(property "Reference" "U21"
 			(at 0 -2.8 0)
 			(unlocked yes)
@@ -15612,7 +16930,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "c6e229f7-a70a-4f42-b07d-3fb56e2f265a")
-		(at 187.85 130.65)
+		(at 238.5 133.0)
 		(property "Reference" "U123"
 			(at -0.15 -2.75 0)
 			(unlocked yes)
@@ -15705,7 +17023,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "c851b43f-deab-41cb-ba82-786d7e27c5db")
-		(at 143.3 66.35)
+		(at 127.75999999999999 98.42)
 		(property "Reference" "U18"
 			(at -0.05 -3 0)
 			(unlocked yes)
@@ -16186,7 +17504,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "d00d2a0e-4758-4565-a009-67753273551a")
-		(at 227.4 48.1)
+		(at 226.25 60.13)
 		(property "Reference" "U113"
 			(at -0.1 -2.3 0)
 			(unlocked yes)
@@ -16279,7 +17597,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "d4fa9b1e-22dd-4ece-b807-0c8cad043621")
-		(at 122.95 55.95)
+		(at 101.37 81.0)
 		(property "Reference" "U23"
 			(at 0.2 -2.8 0)
 			(unlocked yes)
@@ -16372,7 +17690,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "d85c2d33-2457-4ceb-8475-4c5d4574a5bc")
-		(at 119.25 70.1)
+		(at 96.19 100.32)
 		(property "Reference" "U3"
 			(at 0.15 -3.1 0)
 			(unlocked yes)
@@ -16456,7 +17774,7 @@
 			(at 0 0)
 			(size 3.18 3.18)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 144 "Net-(U1003-OD)")
+			(net 144 "Net-(U130-IN2)")
 			(pinfunction "OD")
 			(pintype "bidirectional")
 			(uuid "6580713d-22fe-459b-baf9-7d47496904e7")
@@ -16465,7 +17783,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "dd0ba60d-da77-41df-8ff1-3789d70d1cfb")
-		(at 81.35 134.05)
+		(at 73.5 133.0)
 		(property "Reference" "U51"
 			(at -0.05 -2.75 0)
 			(unlocked yes)
@@ -16558,7 +17876,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "dfdeaf0d-e291-4adc-9a83-ca137753208f")
-		(at 212.1 75.6)
+		(at 210.82999999999998 95.32)
 		(property "Reference" "U79"
 			(at -0.05 -2.55 0)
 			(unlocked yes)
@@ -16651,7 +17969,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "e2f51a0d-288a-412f-93bf-cbb022e9f844")
-		(at 130.55 63.05)
+		(at 110.37 93.76)
 		(property "Reference" "U15"
 			(at -0.2 -2.7 0)
 			(unlocked yes)
@@ -16744,7 +18062,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "e3e6dd1d-b80a-4351-ac35-ff1ed4631e38")
-		(at 129.25 71.1)
+		(at 107.78999999999999 103.42)
 		(property "Reference" "U5"
 			(at -0.15 -2.65 0)
 			(unlocked yes)
@@ -16837,7 +18155,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "e3f933ff-7c4d-41a6-a6a9-5b5d7102d433")
-		(at 156 83)
+		(at 144.53 82.21000000000001)
 		(property "Reference" "U40"
 			(at -0.19 -2.35 0)
 			(unlocked yes)
@@ -16930,7 +18248,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "e41d7b36-8adc-48b1-b644-93370444be9f")
-		(at 192.35 85.9)
+		(at 196.03 109.64)
 		(property "Reference" "U66"
 			(at 0.05 -2.45 0)
 			(unlocked yes)
@@ -17023,7 +18341,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "e57f4c49-9c11-466b-a2bf-ec70eaef138c")
-		(at 236.6 55.45)
+		(at 234.63 68.22999999999999)
 		(property "Reference" "U104"
 			(at -0.2 -2.5 0)
 			(unlocked yes)
@@ -17495,12 +18813,138 @@
 			)
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+		(layer "F.Cu")
+		(uuid "eb99e9ed-a427-43e3-b452-063e6605087c")
+		(at 22.15 81.55)
+		(descr "Mounting Hole 3.2mm, M3")
+		(tags "mounting hole 3.2mm m3")
+		(property "Reference" "H4"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "4f1fb6ba-8749-41a3-9447-ed59cb7b7edd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "baa0cc42-d8ed-4f6f-a213-0f279b3f3533")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopOnly"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "675b81f1-7646-486d-9ab6-c13111e8392b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d3fda5f-66fc-4b9d-a3a8-f538145e4d5b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d72983c-edf4-49f6-a33d-bec12ff1efad")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/06e2170e-d5cf-4a61-8f96-b8e70317376e/7a0532c5-023a-4e06-8a91-bbc80cacb9a0")
+		(sheetname "RHD2164_128_BGA_1")
+		(sheetfile "RHD2164_128_BGA_1.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill none)
+			(layer "Cmts.User")
+			(uuid "8e8cef8a-e2e9-441e-9e59-b46af57ce77d")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "fb6e841d-7da1-4fc0-844a-f4d4cb9ed2b1")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "a427ae75-db52-42ab-beb2-5b8ec5ed4340")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 3.6 3.6)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 191 "unconnected-(H4-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "1429c64c-a58f-4502-97df-d10f4bdad03d")
+		)
+		(pad "1" connect circle
+			(at 0 0)
+			(size 6.4 6.4)
+			(layers "F.Cu" "F.Mask")
+			(net 191 "unconnected-(H4-Pad1)")
+			(pinfunction "1")
+			(pintype "input")
+			(uuid "c8f1963b-6d41-4279-af50-75603bda7817")
+		)
+	)
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "ebc313f0-d032-47c3-b4bb-9f9dbfbdbc61")
-		(at 163.5 65)
+		(at 163.5 73.0)
 		(property "Reference" "U127"
-			(at -0.19 -5.22 0)
+			(at 0 -2.5 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "23a6af1a-78a6-4336-975d-6d0b0dc9665d")
@@ -17567,7 +19011,7 @@
 		(sheetfile "RHD2164_128_BGA_2.kicad_sch")
 		(attr smd)
 		(fp_text user "${REFERENCE}"
-			(at -0.19 4.91 0)
+			(at 0 3 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(uuid "5e8e1719-bc17-4828-b2e3-52ab316f2e79")
@@ -17591,7 +19035,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "ed81f73e-6032-45e7-9745-47d1f3b90d1c")
-		(at 119.45 48.7)
+		(at 98.16 69.78999999999999)
 		(property "Reference" "U32"
 			(at -0.15 -2.3 0)
 			(unlocked yes)
@@ -17684,7 +19128,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "ede335fb-0089-4fef-b2a5-2e2dc09c3497")
-		(at 97.25 133.6)
+		(at 88.5 133.0)
 		(property "Reference" "U53"
 			(at -0.05 -2.6 0)
 			(unlocked yes)
@@ -17777,7 +19221,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "ef2cbebe-321c-46a7-b314-443bded71b11")
-		(at 175.4 131.15)
+		(at 253.5 133.0)
 		(property "Reference" "U125"
 			(at -0.1 -2.55 0)
 			(unlocked yes)
@@ -17870,7 +19314,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "f2b054e3-a750-4ec0-a981-72b250a3957f")
-		(at 81.3 147.8)
+		(at 73.5 148.0)
 		(property "Reference" "U52"
 			(at -0.1 -3 0)
 			(unlocked yes)
@@ -17963,9 +19407,9 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "f5f5f3eb-6412-405f-b92a-7195d6330f2a")
-		(at 163.5 74.5)
+		(at 163.5 83.0)
 		(property "Reference" "U128"
-			(at -0.19 -5.22 0)
+			(at -0.19 -2.5 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "edf3a0a1-c6d4-4141-aea6-54405ad6015f")
@@ -18056,7 +19500,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "f6a2f0da-acba-4c35-a668-ddc0c23cdd84")
-		(at 195.95 69.95)
+		(at 196.65 88.76)
 		(property "Reference" "U87"
 			(at -0.1 -3.15 0)
 			(unlocked yes)
@@ -18149,7 +19593,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "f6fa9c37-e4a1-4357-ad6f-d539737a0514")
-		(at 222.25 58.15)
+		(at 223.04 71.34)
 		(property "Reference" "U102"
 			(at 0 -2.4 0)
 			(unlocked yes)
@@ -18242,7 +19686,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "f928c151-7d79-40d5-92b8-644c3a11dbb7")
-		(at 153.6 73.3)
+		(at 136.76 111.19)
 		(property "Reference" "U10"
 			(at -0.15 -2.7 0)
 			(unlocked yes)
@@ -18549,7 +19993,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "fc8d76ce-66a8-46c0-921a-46591962e086")
-		(at 236.7 143.35)
+		(at 178.5 148.0)
 		(property "Reference" "U116"
 			(at -0.15 -2.95 0)
 			(unlocked yes)
@@ -18642,7 +20086,7 @@
 	(footprint "CustomComponents:1625-5-57-15_D3.18mm_disk"
 		(layer "F.Cu")
 		(uuid "fee48a84-3e71-4529-a370-a3894bb6540c")
-		(at 219.65 81.55)
+		(at 219.21 103.42)
 		(property "Reference" "U70"
 			(at -0.1 -2.4 0)
 			(unlocked yes)
