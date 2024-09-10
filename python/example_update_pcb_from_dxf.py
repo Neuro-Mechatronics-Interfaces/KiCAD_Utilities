@@ -5,7 +5,7 @@ if __name__ == "__main__":
 
     # Define the path to the DXF file
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    dxf_filename = os.path.join(script_dir, '..', 'human-arm-left_grid-v8.DXF')  # Replace with the path to your DXF file
+    dxf_filename = os.path.join(script_dir, '..', 'human-arm_dual-grid_v5_STENCIL.DXF')  # Replace with the path to your DXF file
     pcb_filename = os.path.join(script_dir, '..', '128ch-hdemg-sleeve.kicad_pcb') # Adjust to your pcb
     updated_pcb_filename = os.path.join(script_dir, '..', '128ch-hdemg-sleeve_updated.kicad_pcb') # Adjust to your pcb
     remapping_file = os.path.join(script_dir, 'electrode_remapping.txt')  # Optional, if you need to remap indices
@@ -34,8 +34,10 @@ if __name__ == "__main__":
             print(f"Electrode {row['channel']}: {row['x'] + x_offset}, {row['y'] + y_offset}")
 
     # Parse the remapping file and apply to the labeled coordinates
-    remapping = KiCadUtils.parse_remapping_file(remapping_file)
-    remapped_df = KiCadUtils.apply_remapping(results, remapping, 'electrode')
+    #remapping = KiCadUtils.parse_remapping_file(remapping_file)
+
+    # Instead of hard-coding the remapping, we will define the electrode arrangement
+    remapped_df = KiCadUtils.apply_remapping_v2(results, '8-by-8_swap', 'electrode')
 
     # Double-check the remapping results
     KiCadUtils.visualize_footprints(remapped_df)

@@ -260,6 +260,109 @@ class KiCadUtils:
         return remapped_df
 
     @staticmethod
+    def apply_remapping_v2(df, remapping_style='8-by-8_swap', label='electrode'):
+        """
+        Apply the remapping to the DataFrame based on remapping style.
+
+        Parameters:
+        df (DataFrame): DataFrame with columns 'x', 'y', 'r', 'label', and 'channel'.
+        label (str, optional): The label to filter coordinates. Default is 'electrode'.
+
+        Returns:
+        DataFrame: DataFrame with remapped coordinates and unchanged coordinates.
+        """
+        # Filter the DataFrame by the specified label
+        filtered_df = df[df['label'] == label].copy()
+
+        # Sort by x coordinate first, then by y coordinate
+        filtered_df = filtered_df.sort_values(by=['y', 'x'], ascending=[False, True]).reset_index(drop=True)
+
+        # Assign new channel numbers from 0 to n
+        filtered_df['channel'] = range(0, len(filtered_df))
+
+        # Get the number of electrodes
+        num_electrodes = len(filtered_df)
+
+        # Check if there are enough channels to reassign
+        if num_electrodes >= 129:
+            # Reassign the first and last channels to 129 and 130
+            filtered_df.loc[0, 'channel'] = 129
+            filtered_df.loc[num_electrodes - 1, 'channel'] = 130
+
+        # Check if the remapping style requires swapping specific ranges
+        if remapping_style == '8-by-8':
+            # Define the ranges to be swapped
+            swap_pairs = [
+                (9, 16, 17, 24),
+                (17, 24, 33, 40),
+                (49, 56, 25, 32),
+                (65, 72, 33, 40),
+                (81, 88, 41, 48),
+                (97, 104, 49, 56),
+                (113, 120, 57, 64),
+
+                (97, 104, 73, 80),
+                (113, 120, 89, 96),
+                (113, 120, 105, 112)
+            ]
+
+            # Perform the swapping for specific ranges
+            for start1, end1, start2, end2 in swap_pairs:
+                range1_indices = filtered_df[
+                    (filtered_df['channel'] >= start1) & (filtered_df['channel'] <= end1)].index
+                range2_indices = filtered_df[
+                    (filtered_df['channel'] >= start2) & (filtered_df['channel'] <= end2)].index
+
+                temp = filtered_df.loc[range1_indices, ['x', 'y', 'r']].values.copy()
+                filtered_df.loc[range1_indices, ['x', 'y', 'r']] = filtered_df.loc[
+                    range2_indices, ['x', 'y', 'r']].values
+                filtered_df.loc[range2_indices, ['x', 'y', 'r']] = temp
+
+        if remapping_style == '8-by-8_swap':
+            # Define the ranges to be swapped
+            swap_pairs = [
+                (9, 16, 17, 24),
+                (17, 24, 33, 40),
+                (49, 56, 25, 32),
+                (65, 72, 33, 40),
+                (81, 88, 41, 48),
+                (97, 104, 49, 56),
+                (113, 120, 57, 64),
+                (97, 104, 73, 80),
+                (113, 120, 89, 96),
+                (113, 120, 105, 112)
+            ]
+
+            # Perform the swapping for specific ranges
+            for start1, end1, start2, end2 in swap_pairs:
+                range1_indices = filtered_df[
+                    (filtered_df['channel'] >= start1) & (filtered_df['channel'] <= end1)].index
+                range2_indices = filtered_df[
+                    (filtered_df['channel'] >= start2) & (filtered_df['channel'] <= end2)].index
+
+                temp = filtered_df.loc[range1_indices, ['x', 'y', 'r']].values.copy()
+                filtered_df.loc[range1_indices, ['x', 'y', 'r']] = filtered_df.loc[
+                    range2_indices, ['x', 'y', 'r']].values
+                filtered_df.loc[range2_indices, ['x', 'y', 'r']] = temp
+
+            # Swap channels 1-64 with 65-128
+            range1_indices = filtered_df[(filtered_df['channel'] >= 1) & (filtered_df['channel'] <= 64)].index
+            range2_indices = filtered_df[(filtered_df['channel'] >= 65) & (filtered_df['channel'] <= 128)].index
+
+            temp = filtered_df.loc[range1_indices, ['x', 'y', 'r']].values.copy()
+            filtered_df.loc[range1_indices, ['x', 'y', 'r']] = filtered_df.loc[
+                range2_indices, ['x', 'y', 'r']].values
+            filtered_df.loc[range2_indices, ['x', 'y', 'r']] = temp
+
+        # Update the main DataFrame with the remapped channels and coordinates
+        df.update(filtered_df)
+
+        # Sort by label and channel to maintain order
+        df = df.sort_values(by=['label', 'channel']).reset_index(drop=True)
+
+        return df
+
+    @staticmethod
     def visualize_footprints(df):
         """
         Visualize the coordinates from the results dictionary.
