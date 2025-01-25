@@ -5,95 +5,94 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+kicad_pcb_schematic = {
+    'A4': (297/2, 216/2),
+    'A3': (420/2, 297/2),
+    'A2': (594/2, 420/2),
+}
+
 class KiCadUtils:
 
     @staticmethod
-    def get_coordinates_from_dxf(filename, radius_dict=None, flip_y=True, visualize=False, export=True):
+    def get_coordinates_from_dxf(filename, pcb_data_dict=None, flip_y=True, visualize=False, export=False, verbose=False):
         """
         Extract x and y coordinates of circles from a DXF file based on specified radii and return as a DataFrame.
 
         Parameters:
-        filename (str): Name of the DXF file.
-        radius_dict (dict, optional): Dictionary with custom names as keys and radii as values.
-                                      Default is None, which means all shapes are in the same category.
-        flip_y (bool, optional): If True, flips the y-coordinates. Default is True.
-        visualize (bool, optional): If True, plots the extracted coordinates. Default is False.
-        export (bool, optional): If True, exports the extracted coordinates to a CSV file. Default is True.
+        ----------------------
+            filename (str):               Name of the DXF file.
+            pcb_data_dict (dict):         Dictionary with keys as labels and values as radii.
+            flip_y (bool, optional):      If True, flips the y-coordinates. Default is True.
+            visualize (bool, optional):   If True, plots the extracted coordinates. Default is False.
+            export (bool, optional):      If True, exports the extracted coordinates to a CSV file. Default is True.
+            verbose (bool):               If True, prints additional information. Default is False.
 
         Returns:
-        DataFrame: DataFrame with columns 'x', 'y', 'r', 'label', and 'channel'.
+        ----------------------
+            DataFrame: DataFrame with columns 'x', 'y', 'r', 'label', and 'channel'.
         """
         # Open the DXF file
         doc = ezdxf.readfile(filename)
         msp = doc.modelspace()
 
-        # Initialize the results dictionary
-        if radius_dict is None:
-            radius_dict = {'shape': None}
+        if pcb_data_dict is None:
+            print("No PCB data dictionary provided. Please provide a dictionary with labels and radii.")
+            return None
 
+        # Iterate through entities in the DXF file. Will define as 'CIRCLE' for now, but in the
+        # future there could be other shapes and this should loop through each one
+        entity_type = 'CIRCLE'
+
+        print(f"Searching for {entity_type} entities...")
+        entities = msp.query(entity_type)
+        print(f"Found {len(entities)} {entity_type} entities.")
         results = {'x': [], 'y': [], 'r': [], 'label': []}
-
-        # Iterate through all circle entities
-        for entity in msp.query('CIRCLE'):
+        for i, entity in enumerate(entities):
             x = round(entity.dxf.center.x, 2)
             y = round(entity.dxf.center.y, 2)
             r = round(entity.dxf.radius, 1)
+            if verbose: print(f" | Item {i}, {entity_type} at ({x}, {y}) with radius {r}.", end="")
 
-            if flip_y:
-                y = -y
-
+            # Go through PCB data for matching information, otherwise create a new label
             matched = False
-            for name, radius in radius_dict.items():
-                if radius is None or np.isclose(r, radius):
-                    results['x'].append(x)
-                    results['y'].append(y)
-                    results['r'].append(r)
-                    results['label'].append(name)
-                    matched = True
-                    break
+            for name, data in pcb_data_dict.items():
+                if data['entity'] == entity_type:
+                    if np.isclose(r, data['radius'], atol=0.1):
+                        if verbose: print(f"... Matched {name} with radius {r}.")
+                        results['x'].append(x)
+                        results['y'].append(y)
+                        results['r'].append(r)
+                        results['label'].append(name)
+                        matched = True
+                        break
 
-            # If no specific radius matched and a general shape category exists
-            if not matched and 'shape' in radius_dict:
+            # If no shape key was in the radius_dict, create a new key for the radius
+            if not matched:
+                if verbose: print(f"... Matched radius_{r}.")
                 results['x'].append(x)
                 results['y'].append(y)
                 results['r'].append(r)
-                results['label'].append('shape')
+                results['label'].append(f'radius_{r}')
 
         # Create a DataFrame and drop duplicates
         df = pd.DataFrame(results).drop_duplicates().reset_index(drop=True)
+        if verbose: print(df)
 
         # Because the duplicates have been removed, we can now include a new header called 'channel' and assign the channel number
         # to each electrode. This is done by grouping the dataframe by the 'label' column and then assigning a channel number to each
         # electrode in the group.
         df['channel'] = df.groupby('label').cumcount() + 1
 
-
-        # Debugging output
+        print("\nExtracted Labels:")
         for label in df['label'].unique():
-            print(f"\nExtracted {label} Coordinates:")
-            for index, row in df[df['label'] == label].iterrows():
-                print(f"  X: {row['x']}, Y: {row['y']}, R: {row['r']}")
+            print(f"| {label}, found {len(df[df['label'] == label])} items.")
+            if verbose:
+                for index, row in df[df['label'] == label].iterrows():
+                    print(f" CH:{index}, X: {row['x']}, Y: {row['y']}, R: {row['r']}")
         print("\n")
 
         # Visualization
-        if visualize:
-            plt.figure(figsize=(10, 8))
-            plt.gca().invert_yaxis()  # Invert y-axis to match DXF coordinate system
-
-            colors = {'electrode': 'blue', 'grommet': 'red', 'shape': 'green'}
-            for label, group in df.groupby('label'):
-                plt.scatter(group['x'], group['y'], s=[(r * 2) ** 2 for r in group['r']],
-                            color=colors.get(label, 'black'), label=label, alpha=0.5)
-                for idx, row in group.iterrows():
-                    plt.text(row['x'], row['y'], f'{label[0].upper()}{idx + 1}', fontsize=9, ha='right',
-                             color=colors.get(label, 'black'))
-
-            plt.xlabel('X Coordinate')
-            plt.ylabel('Y Coordinate')
-            plt.title('Shapes Visualization')
-            plt.legend()
-            plt.grid(True)
-            plt.show()
+        KiCadUtils.visualize_footprints(df, "Extracted shapes")
 
         # Export to CSV
         if export:
@@ -105,7 +104,7 @@ class KiCadUtils:
         return df
 
     @staticmethod
-    def update_footprint_locations(filename, df, footprint_name, updated_name_tag='_updated', x_offset=0, y_offset=0, verbose=False):
+    def update_footprint(filename, df, footprint_name, verbose=False):
         """
         Update footprint locations in a KiCad PCB file based on DataFrame.
 
@@ -114,18 +113,13 @@ class KiCadUtils:
         df (DataFrame): DataFrame with columns 'x', 'y', 'r', 'label', and 'channel'.
         footprint_name (str): Name of the footprint to update.
         updated_name_tag (str, optional): Tag to append to the updated file name. Default is '_updated'.
-        x_offset (float, optional): Offset to add to the x-coordinates. Default is 0.
-        y_offset (float, optional): Offset to add to the y-coordinates. Default is 0.
-
         """
-        # Apply the offset and flip y-coordinates if needed
-        df['x'] = df['x'] + x_offset
-        df['y'] = df['y'] + y_offset
 
         # Debugging output
-        print("\nCoordinates to be applied to the PCB:")
-        for _, row in df.iterrows():
-            print(f"  X: {row['x']}, Y: {row['y']}, Channel: {row['channel']}")
+        if verbose:
+            print("\nCoordinates to be applied to the PCB:")
+            for _, row in df.iterrows():
+                print(f" | X: {row['x']}, Y: {row['y']}, Channel: {row['channel']}")
 
         # Read the file contents
         with open(filename, 'r') as file:
@@ -142,7 +136,6 @@ class KiCadUtils:
 
 
         for i, line in enumerate(lines):
-
             if footprints_updated >= num_footprints:
                 break
 
@@ -186,7 +179,11 @@ class KiCadUtils:
 
         # Create the new filename
         filepath, ext = os.path.splitext(filename)
-        new_filename = f"{filepath}{updated_name_tag}{ext}"
+        new_filename = f"{filepath}{'_updated'}{ext}"
+
+        if footprints_updated == 0:
+            print(f'No footprints found in the file with the name {footprint_name}. No updates made. Check footprint name.')
+            return
 
         # Write the updated contents to the new file
         with open(new_filename, 'w') as file:
@@ -260,34 +257,43 @@ class KiCadUtils:
         return remapped_df
 
     @staticmethod
-    def apply_remapping_v2(df, remapping_style='8-by-8_swap', label='electrode'):
+    def apply_remapping_v2(df, remapping_style='8-by-8_swap', label='electrode', offset=(0, 0), flip_y=False, verbose=False):
         """
         Apply the remapping to the DataFrame based on remapping style.
 
         Parameters:
-        df (DataFrame): DataFrame with columns 'x', 'y', 'r', 'label', and 'channel'.
-        label (str, optional): The label to filter coordinates. Default is 'electrode'.
+        ----------------
+            df (DataFrame): DataFrame with columns 'x', 'y', 'r', 'label', and 'channel'.
+            remapping_style (str): The remapping style to apply.
+            label (str, optional): The label to filter coordinates. Default is 'electrode'.
+            offset (tuple, optional): The offset to apply to the coordinates. Default is (0, 0).
+            flip_y (bool, optional): If True, flips the y-coordinates. Default is False.
+            verbose (bool): If True, prints additional information. Default is False.
 
         Returns:
-        DataFrame: DataFrame with remapped coordinates and unchanged coordinates.
+        ----------------
+            DataFrame: DataFrame with remapped coordinates and unchanged coordinates.
         """
-        # Filter the DataFrame by the specified label
-        filtered_df = df[df['label'] == label].copy()
+        # Check if the label exists in the DataFrame
+        if label not in df['label'].unique():
+            print(f"Label {label} not found in the DataFrame. No remapping applied.")
+            return df
 
-        # Sort by x coordinate first, then by y coordinate
-        filtered_df = filtered_df.sort_values(by=['y', 'x'], ascending=[False, True]).reset_index(drop=True)
+        # Seperate selected shape from others
+        selected_df = df[df['label'] == label].copy()
+        other_shapes_df = df[df['label'] != label].copy()
 
-        # Assign new channel numbers from 0 to n
-        filtered_df['channel'] = range(0, len(filtered_df))
-
-        # Get the number of electrodes
-        num_electrodes = len(filtered_df)
+        # The electrodes are currently not in the mapping order we need, since the cable routing
+        # is influenced by the electrode placement to the chips
+        if verbose:
+            print(f"Printing the first 10 {label} entities ...")
+            print(selected_df.head(10))
 
         # Check if there are enough channels to reassign
-        if num_electrodes >= 129:
+        if len(selected_df) >= 129:
             # Reassign the first and last channels to 129 and 130
-            filtered_df.loc[0, 'channel'] = 129
-            filtered_df.loc[num_electrodes - 1, 'channel'] = 130
+            selected_df.loc[0, 'channel'] = 129
+            selected_df.loc[len(selected_df) - 1, 'channel'] = 130
 
         # Check if the remapping style requires swapping specific ranges
         if remapping_style == '8-by-8':
@@ -308,17 +314,17 @@ class KiCadUtils:
 
             # Perform the swapping for specific ranges
             for start1, end1, start2, end2 in swap_pairs:
-                range1_indices = filtered_df[
-                    (filtered_df['channel'] >= start1) & (filtered_df['channel'] <= end1)].index
-                range2_indices = filtered_df[
-                    (filtered_df['channel'] >= start2) & (filtered_df['channel'] <= end2)].index
+                range1_indices = selected_df[
+                    (selected_df['channel'] >= start1) & (selected_df['channel'] <= end1)].index
+                range2_indices = selected_df[
+                    (selected_df['channel'] >= start2) & (selected_df['channel'] <= end2)].index
 
-                temp = filtered_df.loc[range1_indices, ['x', 'y', 'r']].values.copy()
-                filtered_df.loc[range1_indices, ['x', 'y', 'r']] = filtered_df.loc[
+                temp = selected_df.loc[range1_indices, ['x', 'y', 'r']].values.copy()
+                selected_df.loc[range1_indices, ['x', 'y', 'r']] = selected_df.loc[
                     range2_indices, ['x', 'y', 'r']].values
-                filtered_df.loc[range2_indices, ['x', 'y', 'r']] = temp
+                selected_df.loc[range2_indices, ['x', 'y', 'r']] = temp
 
-        if remapping_style == '8-by-8_swap':
+        elif remapping_style == '8-by-8_swap':
             # Define the ranges to be swapped
             swap_pairs = [
                 (9, 16, 17, 24),
@@ -335,35 +341,53 @@ class KiCadUtils:
 
             # Perform the swapping for specific ranges
             for start1, end1, start2, end2 in swap_pairs:
-                range1_indices = filtered_df[
-                    (filtered_df['channel'] >= start1) & (filtered_df['channel'] <= end1)].index
-                range2_indices = filtered_df[
-                    (filtered_df['channel'] >= start2) & (filtered_df['channel'] <= end2)].index
+                range1_indices = selected_df[
+                    (selected_df['channel'] >= start1) & (selected_df['channel'] <= end1)].index
+                range2_indices = selected_df[
+                    (selected_df['channel'] >= start2) & (selected_df['channel'] <= end2)].index
 
-                temp = filtered_df.loc[range1_indices, ['x', 'y', 'r']].values.copy()
-                filtered_df.loc[range1_indices, ['x', 'y', 'r']] = filtered_df.loc[
+                temp = selected_df.loc[range1_indices, ['x', 'y', 'r']].values.copy()
+                selected_df.loc[range1_indices, ['x', 'y', 'r']] = selected_df.loc[
                     range2_indices, ['x', 'y', 'r']].values
-                filtered_df.loc[range2_indices, ['x', 'y', 'r']] = temp
+                selected_df.loc[range2_indices, ['x', 'y', 'r']] = temp
 
             # Swap channels 1-64 with 65-128
-            range1_indices = filtered_df[(filtered_df['channel'] >= 1) & (filtered_df['channel'] <= 64)].index
-            range2_indices = filtered_df[(filtered_df['channel'] >= 65) & (filtered_df['channel'] <= 128)].index
+            range1_indices = selected_df[(selected_df['channel'] >= 1) & (selected_df['channel'] <= 64)].index
+            range2_indices = selected_df[(selected_df['channel'] >= 65) & (selected_df['channel'] <= 128)].index
 
-            temp = filtered_df.loc[range1_indices, ['x', 'y', 'r']].values.copy()
-            filtered_df.loc[range1_indices, ['x', 'y', 'r']] = filtered_df.loc[
+            temp = selected_df.loc[range1_indices, ['x', 'y', 'r']].values.copy()
+            selected_df.loc[range1_indices, ['x', 'y', 'r']] = selected_df.loc[
                 range2_indices, ['x', 'y', 'r']].values
-            filtered_df.loc[range2_indices, ['x', 'y', 'r']] = temp
+            selected_df.loc[range2_indices, ['x', 'y', 'r']] = temp
 
-        # Update the main DataFrame with the remapped channels and coordinates
-        df.update(filtered_df)
+        elif remapping_style == 'forearm-pattern':
+            # Will arrange channels bottom-to-top from left to right
+            print("Applying forearm-pattern remapping...")
+            selected_df = selected_df.sort_values(by=["x", "y"], ascending=[True, False]).reset_index(drop=True)
+            selected_df['channel'] = range(1, len(selected_df) + 1)
 
-        # Sort by label and channel to maintain order
-        df = df.sort_values(by=['label', 'channel']).reset_index(drop=True)
+        else:
+            print(f"Unknown remapping style: {remapping_style}. No remapping applied.")
+            return df
 
-        return df
+        # 🔧 Apply the offset and flip y-coordinates if needed 🔧
+        selected_df['x'] = selected_df['x'] + offset[0]
+        selected_df['y'] = selected_df['y'] + offset[1]
+        if flip_y:
+            selected_df['y'] = -selected_df['y']
+
+        # Merge back the unmodified other shapes
+        updated_df = pd.concat([selected_df, other_shapes_df]).reset_index(drop=True)
+
+        # Quick check of the electrode coordinate positions, including offset
+        if verbose:
+            print("=== Shape coordinates after remapping ===")
+            print(updated_df.head(10))
+
+        return updated_df
 
     @staticmethod
-    def visualize_footprints(df):
+    def visualize_footprints(df, title='Shapes Visualization'):
         """
         Visualize the coordinates from the results dictionary.
 
@@ -375,7 +399,8 @@ class KiCadUtils:
             plt.figure(figsize=(10, 8))
             plt.gca().invert_yaxis()  # Invert y-axis to match DXF coordinate system
 
-            colors = {'electrode': 'blue', 'grommet': 'red', 'shape': 'green'}
+            #colors = {'electrode': 'blue', 'grommet': 'red', 'shape': 'green'}
+            colors = {label: np.random.rand(3,) for label in df['label'].unique()}
             for label, group in df.groupby('label'):
                 plt.scatter(group['x'], group['y'], s=[(r * 2) ** 2 for r in group['r']],
                             color=colors.get(label, 'black'), label=label, alpha=0.5)
@@ -385,9 +410,7 @@ class KiCadUtils:
 
             plt.xlabel('X Coordinate')
             plt.ylabel('Y Coordinate')
-            plt.title('Shapes Visualization')
+            plt.title(title)
             plt.legend()
             plt.grid(True)
             plt.show()
-
-

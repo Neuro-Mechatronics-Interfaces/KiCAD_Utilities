@@ -3,3 +3,11 @@ python/__pycache__/
 *.asv
 *.lck
 *.kicad_pcb
+
+
+# virtual environments
+kicad
+.idea
+
+# Text files
+*.txt
