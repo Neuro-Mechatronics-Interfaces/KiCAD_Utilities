@@ -1,13 +1,15 @@
+
+# virtual environments
 python/__pycache__/
 .idea
+.kicad
+.idea
+
+# KiCad files
 *.asv
 *.lck
 *.kicad_pcb
-
-
-# virtual environments
-kicad
-.idea
+*.DXF
 
 # Text files
 *.txt

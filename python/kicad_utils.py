@@ -5,16 +5,17 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Centering coordinates for KiCad PCB schematic styles
 kicad_pcb_schematic = {
     'A4': (297/2, 216/2),
     'A3': (420/2, 297/2),
-    'A2': (594/2, 420/2),
+    'A2': (594/2 , 420/2),
 }
 
 class KiCadUtils:
 
     @staticmethod
-    def get_coordinates_from_dxf(filename, pcb_data_dict=None, flip_y=True, visualize=False, export=False, verbose=False):
+    def get_coordinates_from_dxf(filename, pcb_data_dict=None, export=False, verbose=False):
         """
         Extract x and y coordinates of circles from a DXF file based on specified radii and return as a DataFrame.
 
@@ -257,7 +258,7 @@ class KiCadUtils:
         return remapped_df
 
     @staticmethod
-    def apply_remapping_v2(df, remapping_style='8-by-8_swap', label='electrode', offset=(0, 0), flip_y=False, verbose=False):
+    def apply_remapping_v2(df, remapping_style='8-by-8_swap', label='electrode', style='A4', offset=(0, 0), flip_y=False, verbose=False):
         """
         Apply the remapping to the DataFrame based on remapping style.
 
@@ -370,9 +371,11 @@ class KiCadUtils:
             print(f"Unknown remapping style: {remapping_style}. No remapping applied.")
             return df
 
-        # 🔧 Apply the offset and flip y-coordinates if needed 🔧
-        selected_df['x'] = selected_df['x'] + offset[0]
-        selected_df['y'] = selected_df['y'] + offset[1]
+        center = kicad_pcb_schematic[style]
+
+        # 🔧 Apply the schematic centering, offset and flip y-coordinates if needed 🔧
+        selected_df['x'] = selected_df['x'] + center[0] + offset[0]
+        selected_df['y'] = selected_df['y'] + center[1] + offset[1]
         if flip_y:
             selected_df['y'] = -selected_df['y']
 
