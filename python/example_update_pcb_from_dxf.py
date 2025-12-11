@@ -9,7 +9,7 @@ corresponding footprint locations in a KiCad PCB file. Features include:
 - Support for multiple element types (electrodes, mounting holes, etc.)
 
 Author: jshulgac@andrew.cmu.edu
-Last updated: 2025-12-10
+Last updated: 2025-12-11
 """
 
 import os
